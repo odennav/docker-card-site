@@ -1,10 +1,10 @@
-# Deploying the Earth Website with Nginx
+# Deploying the Card Website with Nginx
 
 Welcome to the repository dedicated to automating the deployment of the Card website using Nginx and Docker!
 
 ## Overview
 
-Automate deployment of the Highway website with an Nginx server using Docker images and containers.
+Automate deployment of the Card website with an Nginx server using Docker images and containers.
 This repository includes scripts to push Docker images to your DockerHub repository and clean up deployment on local machine(optional).
 
 ******************
