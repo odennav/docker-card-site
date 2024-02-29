@@ -1,4 +1,4 @@
-# Deploying the Card Website with Nginx
+# Deploying the Card Website with Docker and Nginx
 
 Welcome to the repository dedicated to automating the deployment of the Card website using Nginx and Docker!
 
@@ -21,23 +21,30 @@ To enhance your learning experience, virtual machines (VMs) have been configured
 The provided Vagrant file simplifies VM management.
 
 1. **Install Vagrant:**
-   If you haven not installed Vagrant, download it [here](https://www.vagrantup.com/downloads.html) 
-   and follow the installation instructions for your operating system. Optionally, for a graphical user interface, run the scripts in an Ubuntu VM instead of Vagrant and 
+   If you haven't installed Vagrant, download it [here](https://www.vagrantup.com/downloads.html) 
+   and follow the installation instructions for your operating system. Optionally, for a graphical user interface, run the scripts in an Ubuntu VM instead of Vagrant & 
    access the website at localhost:900 in your web browser.
+
 2. **Install Docker:**
 
    **For Windows:**
+   - If you intend to use git bash with Windows and not linux VM, install chocolatey [here](https://chocolatey.org/install).
+
+   - Open powershell terminal and use chocolatey to install git bash .
+      ```bash
+   choco install git
+   ```
+
    - Install Docker Desktop by following the instructions [here](https://docs.docker.com/desktop/install/windows/).
+
 
    **For Linux:**
    - Install Docker Engine by following the instructions [here](https://docs.docker.com/desktop/install/linux/).
 
-3. **Clone the Repository:**
-   Clone this repository to your local machine to obtain the scripts and the Vagrant file.
 
-   ```bash
-   git clone https://github.com/odennav/nginx-card.git
-   cd nginx-earth
+3. **Spin up VM:**
+    ```bash
+   vagrant up cool
    ```
 
 4. **Access the VM:**
@@ -45,15 +52,25 @@ The provided Vagrant file simplifies VM management.
    vagrant ssh cool
    ```
 
-5. **Practice with the Scripts:**
+5. **Clone the Repository:**
+    Clone this repository to your Linux VM to get the scripts and the Vagrant file. First install git in VM.
+
+   ```bash
+   sudo apt-get install git
+   git clone https://github.com/odennav/nginx-card.git
+   cd nginx-card
+   ```
+
+6. **Practice with the Scripts:**
 
    Open a script file with a text editor of your choice, and type out every line of code for hands-on learning and to understand how it works
 
-6. **Download HTML template from Tooplate.com and extract webfiles to working directory**:
+
+7. **Download HTML template from Tooplate.com and extract webfiles to working directory**:
    ```bash
    bash get_html.sh
    ```
-7. **Automate deployment of highway website run with docker containers**:
+8. **Automate deployment of highway website run with docker containers**:
    ```bash
    bash nginx_card_deploy.sh
    ```
@@ -66,4 +83,4 @@ The provided Vagrant file simplifies VM management.
 ## Contribution Guidelines
    If you have your own scripts or improvements, feel free to contribute! Suggestions and enhancements are welcome.
 
-Happy Scripting!
+Cool Deployment!
