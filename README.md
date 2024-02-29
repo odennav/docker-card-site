@@ -12,8 +12,8 @@ This repository includes scripts to push Docker images to your DockerHub reposit
 
 ## Special Credits
 
-Special thanks to my awesome tutor Ismail Muhammed Hammed:
-[IsmailMuhammed2019](https://github.com/IsmailMuhammed2019)
+Special thanks to [Tooplate](https://https://www.tooplate.com/) for free HTML templates
+and my awesome tutor [IsmailMuhammed2019](https://github.com/IsmailMuhammed2019)
 
 ## Getting Started
 
