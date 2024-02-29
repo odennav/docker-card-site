@@ -18,12 +18,11 @@ and my awesome tutor [IsmailMuhammed2019](https://github.com/IsmailMuhammed2019)
 ## Getting Started
 
 To enhance your learning experience, virtual machines (VMs) have been configured for you to run and test the scripts using [Vagrant](https://www.vagrantup.com/).
-The provided Vagrant file simplifies VM management.
+The provided Vagrant file simplifies VM Management.
 
 1. **Install Vagrant:**
    If you haven't installed Vagrant, download it [here](https://www.vagrantup.com/downloads.html) 
-   and follow the installation instructions for your operating system. Optionally, for a graphical user interface, run the scripts in an Ubuntu VM instead of Vagrant & 
-   access the website at localhost:900 in your web browser.
+   and follow the installation instructions for your OS.
 
 2. **Install Docker:**
 
