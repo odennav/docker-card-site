@@ -1,4 +1,4 @@
-# Deploying the Card Website with Docker and Nginx
+# Deploying the Card website with Docker and Nginx
 
 Deployment automated with bash scripts.
 
