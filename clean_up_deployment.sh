@@ -23,7 +23,7 @@ echo -e  "\n"
 
 echo "******************************************"
 echo "Deleting card-image tagged to your docker hub local repository:"
-docker rmi victortreten/repo_test:card
+docker rmi odennav/nginx:card
 sleep 5
 echo -e  "\n"
 
