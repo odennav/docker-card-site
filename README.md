@@ -1,6 +1,6 @@
 # Deploying the Card website with Docker
 
-Deployment automated with bash scripts.
+Deployment automated with bash scripts in test environment.
 
 ## Overview
 
