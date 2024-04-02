@@ -1,4 +1,4 @@
-# Deploying the Card website with Docker and Nginx
+# Deploying the Card website with Docker
 
 Deployment automated with bash scripts.
 
@@ -10,10 +10,6 @@ This repository includes scripts to push Docker images to your DockerHub reposit
 ******************
 ![](https://github.com/odennav/nginx-card/blob/master/the-card.jpg) 
 
-## Special Credits
-
-Special thanks to [Tooplate](https://https://www.tooplate.com/) for free HTML templates
-and my awesome tutor [IsmailMuhammed2019](https://github.com/IsmailMuhammed2019)
 
 ## Getting Started
 
@@ -81,5 +77,11 @@ The provided Vagrant file simplifies VM Management.
    ```
 ## Contribution Guidelines
    If you have your own scripts or improvements, feel free to contribute! Suggestions and enhancements are welcome.
+
+
+## Special Credits
+
+Special thanks to [Tooplate](https://https://www.tooplate.com/) for free HTML templates
+and my awesome tutor [IsmailMuhammed2019](https://github.com/IsmailMuhammed2019)
 
 Cool Deployment!
