@@ -52,7 +52,7 @@ The provided Vagrant file simplifies VM Management.
 
    ```bash
    sudo apt-get install git
-   git clone https://github.com/odennav/nginx-card.git
+   git clone https://github.com/odennav/docker-card-site.git
    cd nginx-card
    ```
 
