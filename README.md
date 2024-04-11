@@ -30,11 +30,11 @@ The provided Vagrant file simplifies VM Management.
    choco install git
    ```
 
-   Install Docker Desktop by following the instructions [here](https://docs.docker.com/desktop/install/windows/).
+   Install Docker Desktop by following the instructions [here](https://docs.docker.com/desktop/install/windows-install/).
 
 
    **For Linux:**
-   Install Docker Engine by following the instructions [here](https://docs.docker.com/desktop/install/linux/).
+   Install Docker Engine by following the instructions [here](https://docs.docker.com/engine/install/ubuntu/).
 
 
 3. **Spin up VM:**
