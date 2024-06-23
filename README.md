@@ -77,7 +77,7 @@ Download HTML template from `Tooplate` and extract webfiles to working directory
 cd bash-scripts/
 bash get_html.sh
 ```
-Run acript to automate deployment of the `Card` website 
+Run script to automate deployment of the `Card` website 
 ```bash
 cd bash-scripts/
 bash nginx_card_deploy.sh
