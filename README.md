@@ -2,10 +2,6 @@
 
 Deployment automated with bash scripts in Test environment.
 
-## Overview
-
-Automate deployment of the Card website with an Nginx server using Docker images and containers.
-This repository includes scripts to push Docker images to your DockerHub repository and clean up deployment on local machine(optional).
 
 ******************
 ![](https://github.com/odennav/nginx-card/blob/master/docs/the-card.jpg) 
@@ -13,80 +9,96 @@ This repository includes scripts to push Docker images to your DockerHub reposit
 
 ## Getting Started
 
-To enhance your learning experience, virtual machines (VMs) have been configured for you to run and test the scripts using [Vagrant](https://www.vagrantup.com/).
-The provided Vagrant file simplifies VM Management.
 
-1. **Install Vagrant:**
+Install [Terraform](https://developer.hashicorp.com/terraform/install) in your local machine
 
-   If you haven't installed Vagrant, download it [here](https://www.vagrantup.com/downloads.html) 
-   and follow the installation instructions for your OS.
+```bash
+wget -O- https://apt.releases.hashicorp.com/gpg | sudo gpg --dearmor -o /usr/share/keyrings/hashicorp-archive-keyring.gpg
+echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
+sudo apt update && sudo apt install terraform
+```
 
-2. **Install Docker:**
+Install [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html) in your local machine
+```bash
+sudo apt install curl unzip
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+unzip awscliv2.zip
+sudo ./aws/install -i /usr/local/aws-cli -b /usr/local/bin
+```
 
-   **On Windows:**
-   If you intend to use git bash with Windows and not linux VM, install chocolatey [here](https://chocolatey.org/install).
+Confirm the AWS CLI installation
+```bash
+aws --version
+```
 
-   Open powershell terminal and use chocolatey to install git bash .
-   ```console
-   choco install git
-   ```
+Clone this repository in your local machine
+```bash
+cd /
+git clone git@github.com:odennav/docker-card-site.git
+```
 
-   Install Docker Desktop by following the instructions [here](https://docs.docker.com/desktop/install/windows-install/).
+Execute these Terraform commands sequentially in your local machine to create the AWS VPC(Virtual Private Cloud) and EC2 instances.
 
+Initializes terraform working directory
+```bash
+cd docker-card-site/terraform
+terraform init
+```
 
-   **On Linux:**
-   Install Docker Engine by following the instructions [here](https://docs.docker.com/engine/install/ubuntu/).
+Validate the syntax of the terraform configuration files
+```bash
+terraform validate
+```
 
+Create an execution plan that describes the changes terraform will make to the infrastructure
+```bash
+terraform plan
+```
 
-3. **Spin up VM:**
-    ```bash
-   vagrant up cool
-   ```
+Apply the changes described in execution plan
+```bash
+terraform apply -auto-approve
+```
 
-4. **Access the VM:**
-   ```bash
-   vagrant ssh cool
-   ```
+Check AWS console for instances created and running
 
-5. **Clone the Repository:**
-    
-    Clone this repository to your Linux VM to get the scripts and the Vagrant file.     Install git in VM.
+**SSH access**
 
-   ```bash
-   sudo apt-get install git
-   git clone https://github.com/odennav/docker-card-site.git
-   cd docker-card-site
-   ```
+Use `.pem` key from AWS to SSH into the public EC2 instance. IPv4 address of public EC2 instance will be shown in terraform outputs.
+```bash
+ssh -i private-key/terraform-key.pem ec2-user@<ipaddress>
+```
+   
+Clone this repository to the `docker build` machine provisioned and install git in VM.
 
-6. **Practice with the Scripts:**
+```bash
+sudo apt-get install git
+git clone https://github.com/odennav/docker-card-site.git
+cd docker-card-site
+```
 
-   Open a script file with a text editor of your choice, and type out every line of code for hands-on learning and to understand how it works
+Download HTML template from `Tooplate` and extract webfiles to working directory
+```bash
+cd bash-scripts/
+bash get_html.sh
+```
+Automate deployment of the `highway` website with docker containers
+```bash
+cd bash-scripts/
+bash nginx_card_deploy.sh
+```
 
+### Clean Up Deployment(Optional)
 
-7. **Download HTML template from Tooplate.com and extract webfiles to working directory**:
-   ```bash
-   cd bash-scripts/
-   bash get_html.sh
-   ```
-8. **Automate deployment of highway website run with docker containers**:
-   ```bash
-   cd bash-scripts/
-   bash nginx_card_deploy.sh
-   ```
-
-## Clean Up Deployment(Optional)
-   **Delete docker images and containers used to host nginx website**:
-   ```bash
-   cd bash-scripts/
-   bash clean_up.sh 
-   ```
-## Contribution Guidelines
-   If you have your own scripts or improvements, feel free to contribute! Suggestions and enhancements are welcome.
-
-
-## Special Credits
+Delete docker images and containers used to host the website
+```bash
+cd bash-scripts/
+bash clean_up.sh 
+```
+-----
 
 Special thanks to [Tooplate](https://https://www.tooplate.com/) for free HTML templates
 
+-----
 
 Cool Deployment!
