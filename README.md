@@ -82,7 +82,7 @@ Download HTML template from `Tooplate` and extract webfiles to working directory
 cd bash-scripts/
 bash get_html.sh
 ```
-Automate deployment of the `highway` website with docker containers
+Run acript to automate deployment of the `Card` website 
 ```bash
 cd bash-scripts/
 bash nginx_card_deploy.sh
