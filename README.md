@@ -57,7 +57,7 @@ terraform apply -auto-approve
 
 Check AWS console for instances created and running
 
-**SSH access**
+**SSH Access**
 
 Use `.pem` key from AWS to SSH into the public EC2 instance. IPv4 address of public EC2 instance will be shown in terraform outputs.
 ```bash
